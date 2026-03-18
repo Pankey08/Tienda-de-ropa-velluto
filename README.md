@@ -1,5 +1,5 @@
 # Velluto
-<img width="1369" height="1087" alt="image" src="https://github.com/user-attachments/assets/a552c641-3c72-4229-8d74-b60062e49c03" />
+<img width="1369" height="1087" alt="image" src="https://github.com/user-attachments/assets/5933cbd4-bf59-480f-a9bf-0ffe5d53965a" />
 
 ## Alumno: Yaotzin Israel Pineda Pineda
 
