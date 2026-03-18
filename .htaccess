@@ -1,0 +1,37 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /velluto/
+
+DirectoryIndex index.php
+ErrorDocument 404 /velluto/404.php
+
+RewriteRule ^velluto$ /velluto/ [R=301,L]
+
+RewriteRule ^config/ - [F,L]
+RewriteRule ^includes/ - [F,L]
+RewriteRule ^sql/ - [F,L]
+
+RedirectMatch 403 /\.
+<FilesMatch "\.(env|log|sql|bak|conf|ini|sh|inc)$">
+    Require all denied
+</FilesMatch>
+
+RewriteRule ^assets/ - [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^index/?$ index.php [L,QSA,NC]
+RewriteRule ^catalogo/?$ catalogo.php [L,QSA,NC]
+RewriteRule ^producto/([0-9]+)/?$ producto.php?id=$1 [L,QSA,NC]
+RewriteRule ^producto/?$ producto.php [L,QSA,NC]
+RewriteRule ^carrito/?$ carrito.php [L,QSA,NC]
+RewriteRule ^checkout/?$ checkout.php [L,QSA,NC]
+RewriteRule ^login/?$ login.php [L,QSA,NC]
+RewriteRule ^registro/?$ registro.php [L,QSA,NC]
+RewriteRule ^confirmacion/?$ confirmacion.php [L,QSA,NC]
+RewriteRule ^logout/?$ logout.php [L,QSA,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . 404.php [L]
